@@ -11,12 +11,11 @@ def load_data(file):
 
 
 
-
-
-def insert_data(data,values):
+def insert_data(data):
     with open(data, newline='') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        spamreader = csv.reader(csvfile, delimiter=',')
         for row in spamreader:
-            print(', '.join(row))
+            print(row)
+
 
 

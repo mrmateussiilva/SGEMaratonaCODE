@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 from materiais import PAPEIS
-from utils import load_data
+from utils.utils import load_data
 
 
 data_estoque = {
@@ -78,14 +78,15 @@ def view_data_estoque():
     st.subheader("Estoque Tecido Locais")
     st.data_editor(data_estoque["tecido_locais"])
     st.subheader("Estoque Papeis")
-    st.data_editor(data_estoque["papeis"])
+    st.data_editor(data_estoque["papeis"])    
+    st.subheader("Estoque Tintas")
+    st.data_editor(data_estoque["tintas"])
 
 
 
 
 pg = st.navigation([
     st.Page(view_data_estoque, title="Estoque", icon=""),
-    st.Page(view_gastos, title="Gastos", icon=""),
     st.Page(view_previsão, title="Previsão de Gastos", icon=""),
 ])
 

@@ -1,11 +1,10 @@
 
-from utils import load_data,insert_data
-
+from utils import utils
 data_estoque = {
-    "tecido_locais":load_data("model_csv/estoque_locais.csv"),
-    "papeis":load_data("model_csv/estoque_papeis.csv"),
-    "tecidos":load_data("model_csv/estoque_papeis.csv"),
-    "tintas":load_data("model_csv/estoque_tintas.csv"),
+    "tecido_locais":utils.load_data("model_csv/estoque_locais.csv"),
+    "papeis":utils.load_data("model_csv/estoque_papeis.csv"),
+    "tecidos":utils.load_data("model_csv/estoque_papeis.csv"),
+    "tintas":utils.load_data("model_csv/estoque_tintas.csv"),
 }
 
 
@@ -15,4 +14,4 @@ NOMES_TINTAS = set(map(lambda x:x,data_estoque["tintas"]["Cor"]))
 TIPOS_TINTAS = set(map(lambda x:x,data_estoque["tintas"]["Tipo"]))
 
 
-insert_data(data_estoque["tecido_locais"],("Sousplats MALHA - 38x38",20000))
+utils.insert_data(data_estoque["papeis"])
