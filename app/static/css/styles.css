@@ -1,0 +1,102 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.cabecalho {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.cabecalho h5 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Horizontal line */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0;
+}
+
+/* Main content area */
+body > div:last-child {
+    display: flex;
+    margin-top: 60px; /* Adjust based on header height */
+    flex: 1;
+}
+
+/* Sidebar styles */
+.botoes_lateral {
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: calc(100vh - 60px); /* Adjust based on header height */
+    position: fixed;
+    left: 0;
+    top: 60px; /* Adjust based on header height */
+}
+
+.botoes_lateral h5 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.botoes_lateral button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botoes_lateral button:hover {
+    background-color: #0056b3;
+}
+
+/* Main content styles */
+#content {
+    flex: 1;
+    padding: 1rem;
+    margin-left: 200px; /* Adjust based on sidebar width */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .botoes_lateral {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-top: 60px; /* Adjust based on header height */
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    body > div:last-child {
+        flex-direction: column;
+    }
+}
