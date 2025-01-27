@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} - Sistema de Estoque</title>
+    </head>
+    <body>
+        <div>
+            <h5>Cabeçalho</h5>
+        </div>
+        <div>
+            <button>Botão 1</button>
+            <button>Botão 2</button>
+            <button>Botão 3</button>
+            <button>Botão 4</button>
+        </div>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

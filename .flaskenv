@@ -1,0 +1,1 @@
+FLASK_APP=sistema_de_estoque.py
