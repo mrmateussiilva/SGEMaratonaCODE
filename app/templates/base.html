@@ -6,16 +6,23 @@
     </head>
     <body>
         <div class="cabecalho">
-            <h5>Cabeçalho</h5>
+            <a href="/fornecedores">
+                <button>Fornecedores</button>
+            </a>
+            <a href="">
+                <button>Estoque</button>
+            </a>
+            <a href="">
+                <button>Compras</button>
+            </a>
+            <a href="">
+                <button>Gastos</button>
+            </a>
+            <a href="/perfil" id="perfil">
+                <img src="{{ url_for('static', filename='img/perfil.png')}}" alt="Perfil">
+            </a>
         </div>
         <hr>
-        <div class="botoes_lateral">
-            <h5>Menu</h5>
-            <button>Botão 1</button>
-            <button>Botão 2</button>
-            <button>Botão 3</button>
-            <button>Botão 4</button>
-        </div>
         <div>
             {% block content %}{% endblock %}
         </div>
