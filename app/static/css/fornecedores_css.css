@@ -1,34 +1,34 @@
-/* Estilo para a tabela de fornecedores */
+/* Estilo geral para a tabela */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
 }
 
-table th, table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-}
-
+/* Estilo para o cabeçalho da tabela */
 table th {
-    background-color: #333;
-    color: #fff;
-}
-
-table tr:nth-child(even) {
     background-color: #f2f2f2;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
 }
 
-table tr:hover {
-    background-color: #ddd;
+/* Estilo para as células da tabela */
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para as linhas da tabela */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 /* Estilo para a célula de ações */
 table td.acao {
     text-align: center;
-    vertical-align: middle;
 }
 
 /* Estilo para os ícones de ação */
@@ -44,4 +44,24 @@ table td.acao img:hover {
     transform: scale(1.2);
 }
 
+.tabela-container {
+    position: absolute;
+    display: inline-block;
+}
 
+/* Estilo para o link de adicionar */
+.adicionar {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.adicionar img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.adicionar img:hover {
+    transform: scale(1.1);
+}

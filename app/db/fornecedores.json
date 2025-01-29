@@ -1,12 +1,8 @@
 [
     {
+        "id": 0,
         "Nome": "Camila",
         "Produtos": "Malha e Tactel",
         "Contato": "27 15361-4785"
-    },
-    {
-        "Nome": "Matheus",
-        "Produtos": "Adesivo",
-        "Contato": "27 99957-4872"
     }
 ]
