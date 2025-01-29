@@ -3,6 +3,7 @@
     <head>
         <title>{% block title %}{% endblock %} - Sistema de Estoque</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        {% block extra_css %}{% endblock %}
     </head>
     <body>
         <div class="cabecalho">
