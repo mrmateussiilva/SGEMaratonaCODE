@@ -1,12 +1,18 @@
 import json
 
-def LerFornecedores():    
-    with open('app/db/fornecedores.json', 'r') as file:
-        db = json.load(file)
-        file.close()
+db = r"app/db/db_fornecedores.json"
 
-    return db
+class Fornecedores:
+    def __init__(self):
+        pass
+    
+    def salvar(self,fornecedores):
+        with open(db, "w", encoding="utf-8") as file:
+            json.dump(fornecedores, file, indent=4, ensure_ascii=False)
 
-def SalvarFornecedores(fornecedores):
-    with open("app/db/fornecedores.json", "w", encoding="utf-8") as f:
-        json.dump(fornecedores, f, indent=4, ensure_ascii=False)
+    def ler(self):    
+        with open(db, 'r') as file:
+            db = json.load(file)
+            file.close()
+
+        return db
