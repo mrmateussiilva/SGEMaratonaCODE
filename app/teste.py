@@ -1,29 +1,8 @@
-import json
 import sqlite3
-
-
-db = r"app/db/db_fornecedores.json"
-
-
-
-class Fornecedores:
-    def __init__(self):
-        pass
-    
-    def salvar(self,fornecedores):
-        with open(db, "w", encoding="utf-8") as file:
-            json.dump(fornecedores, file, indent=4, ensure_ascii=False)
-
-    def ler(self):    
-        with open(db, 'r') as file:
-            db = json.load(file)
-            file.close()
-
-        return db
 
 db = r"app/db/db.sqlite"
 
-class FornecedoresDB:
+class Fornecedores:
     def __init__(self):
         pass
 
@@ -34,7 +13,11 @@ class FornecedoresDB:
         
         with sqlite3.connect(db) as con:
             cursor = con.cursor()
-            cursor.execute("""SELECT * FROM fornecedores""")
+            cursor.execute("""SELECT ROW_NUMBER() OVER (ORDER BY nome_fornecedor) AS ID, 
+            nome_fornecedor, 
+            nome_produto, 
+            numero_de_contato
+            FROM fornecedores;""")
             resultado = fetch_all_as_dict(cursor)
             return resultado
         
@@ -44,9 +27,5 @@ class FornecedoresDB:
             cursor.execute("""INSERT INTO fornecedores (nome_fornecedor, nome_produto, numero_de_contato)
                         VALUES (?, ?, ?)""", (nome_fornecedor, nome_produto, numero_de_contato))
             con.commit()
-
-    def excluir_fornecedor(self, id):
-        with sqlite3.connect(db) as con:
-            cursor = con.cursor()
-            cursor.execute("""DELETE FROM fornecedores WHERE id = ?""", (id,))
-            con.commit()
+        
+print(Fornecedores().ler())

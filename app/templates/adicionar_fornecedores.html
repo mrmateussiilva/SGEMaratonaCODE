@@ -7,4 +7,16 @@
 {% endblock %}
 
 {% block content %}
+<form action="" method="get">
+    <label for="nome_fornecedor">Nome Fornecedor:</label><br>
+    <input type="text" id="nome_fornecedor" name="nome_fornecedor" required><br>
+
+    <label for="nome_produto">Nome Produto:</label><br>
+    <input type="text" id="nome_produto" name="nome_produto" required><br>
+
+    <label for="numero_de_contato">Número de Contato:</label><br>
+    <input type="text" name="numero_de_contato" id="numero_de_contato" required><br>
+
+    <button>Adicionar</button>
+</form>
 {% endblock %}

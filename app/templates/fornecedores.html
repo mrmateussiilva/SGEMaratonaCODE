@@ -19,9 +19,9 @@
         {% for fornecedor in fornecedores %}
         <tr> 
             <td>{{ fornecedor.id }}</td>
-            <td>{{ fornecedor.Nome }}</td>
-            <td>{{ fornecedor.Produtos }}</td>
-            <td>{{ fornecedor.Contato }}</td>
+            <td>{{ fornecedor.nome_fornecedor }}</td>
+            <td>{{ fornecedor.nome_produto }}</td>
+            <td>{{ fornecedor.numero_de_contato }}</td>
             <td class="acao">
                 <a href="/editar_fornecedor">
                     <img src="{{ url_for('static', filename='img/edicao.png') }}" alt="Edição">
